@@ -60,9 +60,10 @@ newgrp docker
 ## Project Setup
 ### Step 1: Clone the Repository
 ```bash
-sudo usermod -aG docker $USER
-newgrp docker
+git clone https://github.com/ksm26/object-detection-microservice
+cd object_detection_microservice
 ```
+
 ```plaintext
 object_detection_microservice/
 ├── ai_backend/
@@ -95,7 +96,7 @@ docker-compose up --build
 ```bash
 curl -X POST "http://localhost:8000/detect/" -F "file=@images/img1.jpg"
 ```
-## Ouput
+## Output
 ### JSON File: Contains detection details
 JSON: ai_backend/output/<image_name>_detections.json
 ### Processed Image: The image with bounding boxes drawn
