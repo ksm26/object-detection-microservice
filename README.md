@@ -56,14 +56,7 @@ docker-compose --version
 sudo usermod -aG docker $USER
 newgrp docker
 ```
-
-## Project Setup
-### Step 1: Clone the Repository
-```bash
-git clone https://github.com/ksm26/object-detection-microservice
-cd object_detection_microservice
-```
-
+## File Structure
 ```plaintext
 object_detection_microservice/
 ├── ai_backend/
@@ -81,6 +74,14 @@ object_detection_microservice/
 └── images/
     └── img1.jpg
 ```
+
+## Project Setup
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/ksm26/object-detection-microservice
+cd object_detection_microservice
+```
+
 ### Step 2: Pre-download YOLOv8s Weights
 ```bash
 mkdir -p ai_backend/models
@@ -99,8 +100,14 @@ curl -X POST "http://localhost:8000/detect/" -F "file=@images/img1.jpg"
 ## Output
 ### JSON File: Contains detection details
 JSON: ai_backend/output/<image_name>_detections.json
+```plaintext
+[{"bbox": [[171.80197143554688, 177.1391143798828, 276.281494140625, 426.3130187988281]], "confidence": 0.787072479724884, "class": 15, "label": "cat"}, {"bbox": [[255.08807373046875, 65.53730773925781, 426.2208557128906, 423.4767761230469]], "confidence": 0.7535444498062134, "class": 16, "label": "dog"}, {"bbox": [[253.9145965576172, 65.65737915039062, 424.5438232421875, 423.5783386230469]], "confidence": 0.3015751242637634, "class": 15, "label": "cat"}]
+```
 ### Processed Image: The image with bounding boxes drawn
 Image: ai_backend/output/predict_<image_name>.jpg 
+<p align="center">
+<img src="ai_backend/output/predict_img1.jpg" height="450"> 
+</p>
 
 ## Restarting the Services
 ```bash
