@@ -1,4 +1,7 @@
 # Object Detection Microservice
+<p align="center">
+<img src="images/yolov8.png" height="200"> 
+</p>
 
 This repository contains a containerized microservice for object detection using YOLOv8. The project leverages Docker, FastAPI, and YOLOv8 to provide an efficient and user-friendly solution for object detection.
 
